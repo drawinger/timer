@@ -109,17 +109,34 @@
             setInterval(timer, 1000);
         }
 
-        let fiveMinutes; 
-        window.onload = function getTimer() {
-            fiveMinutes = 10 * 1;
+        let itemTimer;
+        let itemColor;
+        const colors = {red: "item__timer_red", yellow: "item__timer_yellow", green: "item__timer_green"};
 
-            const  display = document.querySelector(".item__timer");
-            const tablo = document.querySelector('.item__color');
-            tablo.classList.toggle("item__color_red");
-            startTimer(fiveMinutes, display, tablo);
+        for(const color in colors) {
 
+
+            if(color === "item__timer_red"){
+                itemTimer = ".item__timer_red";
+                itemColor = "item__color_red";
+            } else if(color === "item__timer_yellow") {
+                itemTimer = ".item__timer_yellow";
+                itemColor = "item__color_yellow";
+            } else {
+                itemTimer = ".item__timer_green";
+                itemColor = "item__color_green";
+            }
             
-        };        
+            window.onload = function getTimer(color) {
+                let fiveMinutes = 10 * 1;
+
+                const  display = document.querySelector(itemTimer);
+                const tablo = document.querySelector('.item__color');
+                tablo.classList.toggle(itemColor);
+                startTimer(fiveMinutes, display, tablo);
+            }; 
+        };
+               
         
     </script>
 </head>
