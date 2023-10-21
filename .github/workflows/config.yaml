@@ -3,6 +3,7 @@ name: build
 #on: push
  
 # Тут можно конкретизировать ветку, а так все
+on:
    push:
     branches:
        - development 
