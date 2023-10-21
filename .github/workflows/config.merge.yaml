@@ -30,7 +30,7 @@ jobs:
         run: |
           # Замените эту часть командой для копирования файлов и обновления сервера
           #scp -r ./your-files user@your-server:/path/to/destination
-          root@82.148.19.97 "echo 1"
+          ssh root@82.148.19.97 "echo 1"
 
       # Пометьте задачу как завершенную успешно после успешного выполнения
       - name: Mark as successful
