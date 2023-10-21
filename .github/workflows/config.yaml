@@ -1,10 +1,11 @@
 name: build
 
-on: push
+#on: push
  
 # Тут можно конкретизировать ветку, а так все
-#   push:
-#    branches:
+   push:
+    branches:
+       - development 
 #      - locify-github-actions
 
 jobs:
