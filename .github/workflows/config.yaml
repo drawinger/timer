@@ -9,14 +9,14 @@ on: push
 
 jobs:
   deploy:
-    runs-on: "ubuntu-latestxxx"
+    runs-on: "ubuntu-latest"
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: check files
-        run: ls -la
+        run: ls -la132123
 
 #      - name: running linters
 #        run: npm i && npm run lint-fix
