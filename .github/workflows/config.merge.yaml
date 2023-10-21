@@ -1,0 +1,37 @@
+name: build
+
+#on: push
+ 
+# Тут можно конкретизировать ветку, а так все
+on:
+   push:
+    branches:
+       - development 
+#      - locify-github-actions
+
+jobs:
+  deploy:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install SSH key
+        run: |
+          echo "$SSH_PRIVATE_KEY" > ssh_key
+          chmod 600 ssh_key
+          eval "$(ssh-agent -s)"
+          ssh-add ssh_key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to Server
+        run: |
+          # Замените эту часть командой для копирования файлов и обновления сервера
+          #scp -r ./your-files user@your-server:/path/to/destination
+          root@82.148.19.97 "echo 1"
+
+      # Пометьте задачу как завершенную успешно после успешного выполнения
+      - name: Mark as successful
+        run: echo "Deployment successful"
