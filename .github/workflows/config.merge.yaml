@@ -19,6 +19,7 @@ jobs:
 
       - name: Install SSH key
         run: |
+          whereis ssh
           ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
           ls -la .ssh
           echo "$SSH_PRIVATE_KEY" > ssh_key
