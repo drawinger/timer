@@ -7,3 +7,6 @@
 
 
 [![build](https://github.com/drawinger/timer/actions/workflows/config.yaml/badge.svg?branch=development)](https://github.com/drawinger/timer/actions/workflows/config.yaml)
+
+
+[![build](https://github.com/drawinger/timer/actions/workflows/config.yaml/badge.svg?event=pull_request)](https://github.com/drawinger/timer/actions/workflows/config.yaml)
