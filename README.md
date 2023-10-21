@@ -4,6 +4,3 @@
 [![build](https://github.com/drawinger/timer/actions/workflows/config.yaml/badge.svg?event=push)](https://github.com/drawinger/timer/actions/workflows/config.yaml)
 
 [![build](https://github.com/drawinger/timer/actions/workflows/config.yaml/badge.svg)](https://github.com/drawinger/timer/actions/workflows/config.yaml)
-
-
-[![build](https://github.com/drawinger/timer/actions/workflows/config.yaml/badge.svg?branch=development)](https://github.com/drawinger/timer/actions/workflows/config.yaml)
