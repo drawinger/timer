@@ -1,1 +1,1 @@
-![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push) 
+<br><img src="https://github.com/drawinger/timer/workflows/build/badge.svg?event=push"><br>
