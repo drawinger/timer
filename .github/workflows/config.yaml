@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: check files
-        run: ls -la
+        run: ls -la1231
 
 #      - name: running linters
 #        run: npm i && npm run lint-fix
