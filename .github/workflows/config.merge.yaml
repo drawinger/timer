@@ -4,7 +4,7 @@ name: ci-cd
  
 # Тут можно конкретизировать ветку, а так все
 on:
-   push:
+   merge_group:
 
 jobs:
   deploy:
