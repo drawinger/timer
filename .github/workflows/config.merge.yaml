@@ -5,9 +5,6 @@ name: ci-cd
 # Тут можно конкретизировать ветку, а так все
 on:
    push:
-    branches:
-       - development 
-#      - locify-github-actions
 
 jobs:
   deploy:
@@ -16,24 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Install SSH key
-        run: |
-          whereis ssh
-          ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y >/dev/null 2>&1
-          ls -la .ssh
-          echo "$SSH_PRIVATE_KEY" > ssh_key
-          chmod 600 ssh_key
-          eval "$(ssh-agent -s)"
-          ssh-add ssh_key
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy to Server
-        run: |
-          # Замените эту часть командой для копирования файлов и обновления сервера
-          #scp -r ./your-files user@your-server:/path/to/destination
-          ssh root@82.148.19.97 "echo 1"
 
       # Пометьте задачу как завершенную успешно после успешного выполнения
       - name: Mark as successful
