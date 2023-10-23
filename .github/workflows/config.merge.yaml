@@ -16,7 +16,7 @@ jobs:
     - name: Setup SSH
       run: |
         mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan 82.148.19.97 >> ~/.ssh/known_hosts
         # Здесь замените "" на ваше имя сервера
@@ -28,4 +28,4 @@ jobs:
         # Здесь замените "user@yourserver.com" и путь к проекту на ваши данные
 
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE}}
