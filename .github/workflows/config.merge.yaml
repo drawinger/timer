@@ -1,22 +1,31 @@
-name: ci-cd
+name: CI/CD Pipeline
 
-#on: push
- 
-# Тут можно конкретизировать ветку, а так все
 on:
   push:
     branches:
       - master
-      - development
 
 jobs:
-  deploy:
-    runs-on: "ubuntu-latest"
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      # Пометьте задачу как завершенную успешно после успешного выполнения
-      - name: Mark as successful
-        run: echo "Deployment successful"
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan 82.148.19.97 >> ~/.ssh/known_hosts
+        # Здесь замените "" на ваше имя сервера
+
+    - name: Deploy
+      run: |
+        # Здесь поместите команды для деплоя вашего проекта по SSH
+        ssh drawinger@82.148.19.97 "cd /opt/timer && git pull && source venv/bin/activate && pip install fastapi"
+        # Здесь замените "user@yourserver.com" и путь к проекту на ваши данные
+
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
