@@ -15,10 +15,10 @@ jobs:
 
     - name: Setup SSH
       run: |
-        mkdir -p /home/drawinger/.ssh
-        echo "${{ secrets.SSH_PRIVATE }}" > /home/drawinger/.ssh/id_rsa
-        chmod 600 /home/drawinger/.ssh/id_rsa
-        ssh-keyscan 82.148.19.97 >> /home/drawinger/.ssh/known_hosts
+        sudo mkdir -p /home/drawinger/.ssh
+        sudo echo "${{ secrets.SSH_PRIVATE }}" > /home/drawinger/.ssh/id_rsa
+        sudo chmod 600 /home/drawinger/.ssh/id_rsa
+        sudo ssh-keyscan 82.148.19.97 >> /home/drawinger/.ssh/known_hosts
         # Здесь замените "" на ваше имя сервера
 
     - name: Deploy
