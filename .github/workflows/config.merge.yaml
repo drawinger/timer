@@ -28,4 +28,4 @@ jobs:
         # Здесь замените "user@yourserver.com" и путь к проекту на ваши данные
 
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE}}
+        SSH_PRIVATE: ${{ secrets.SSH_PRIVATE}}
