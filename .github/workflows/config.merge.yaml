@@ -28,7 +28,7 @@ jobs:
     - name: Deploy
       run: |
         # Здесь поместите команды для деплоя вашего проекта по SSH
-        ssh drawinger@82.148.19.97.com "cd /opt/timer/ && git pull"
+        ssh drawinger@82.148.19.97 "cd /opt/timer/ && git pull"
         # Здесь замените "user@yourserver.com" и путь к проекту на ваши данные
 
  
